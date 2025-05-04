@@ -44,7 +44,7 @@ public class UnitOptions extends GenericUnitEntity {
     @Column
     private boolean masking = false;
 
-    @OneToMany
+    @OneToMany(mappedBy = "unitOptions")
     @ToString.Exclude
     private List<Merchant> merchantList;
 
