@@ -31,6 +31,7 @@ public class Merchant extends GenericUnitEntity {
 
     @ManyToOne
     @JoinColumn(name = "unit_option_id", referencedColumnName = "id", nullable = false)
+    @ToString.Exclude
     private UnitOptions unitOptions;
 
     @OneToMany(mappedBy = "merchant")

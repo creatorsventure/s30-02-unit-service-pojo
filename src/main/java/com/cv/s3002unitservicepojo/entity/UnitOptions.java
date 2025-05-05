@@ -24,6 +24,9 @@ public class UnitOptions extends GenericUnitEntity {
     private static final long serialVersionUID = -8432449929466902191L;
 
     @Column
+    private boolean enforce = false;
+
+    @Column
     private boolean captcha = false;
 
     @Column

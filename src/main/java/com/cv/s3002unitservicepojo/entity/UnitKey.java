@@ -32,6 +32,7 @@ public class UnitKey extends GenericUnitEntity {
     String publicKey;
 
     @ManyToMany(mappedBy = "unitKeyList")
+    @ToString.Exclude
     private List<Device> deviceList;
 
 }

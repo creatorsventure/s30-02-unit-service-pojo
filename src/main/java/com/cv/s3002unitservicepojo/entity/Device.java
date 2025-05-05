@@ -28,6 +28,7 @@ public class Device extends GenericUnitEntity {
 
     @ManyToOne
     @JoinColumn(name = "merchant_id", referencedColumnName = "id", nullable = false)
+    @ToString.Exclude
     private Merchant merchant;
 
     @ElementCollection
@@ -36,6 +37,7 @@ public class Device extends GenericUnitEntity {
             joinColumns = @JoinColumn(name = "device_id")
     )
     @Column(name = "action_id")
+    @ToString.Exclude
     private List<String> actionList;
 
     @ElementCollection
@@ -44,6 +46,7 @@ public class Device extends GenericUnitEntity {
             joinColumns = @JoinColumn(name = "device_id")
     )
     @Column(name = "engine_id")
+    @ToString.Exclude
     private List<String> engineList;
 
     @ManyToMany

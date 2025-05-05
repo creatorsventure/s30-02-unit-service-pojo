@@ -37,6 +37,7 @@ public class Password extends GenericUnitEntity implements Serializable {
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_detail_id", referencedColumnName = "id", nullable = false)
+    @ToString.Exclude
     private UserDetail userDetail;
 
 
