@@ -24,31 +24,13 @@ public class UnitOptions extends GenericUnitEntity {
     private static final long serialVersionUID = -8432449929466902191L;
 
     @Column
-    private boolean enforce = false;
+    private boolean partial = false;
 
     @Column
-    private boolean captcha = false;
-
-    @Column
-    private boolean transactionOTP = false;
-
-    @Column
-    private boolean loginOTP = false;
-
-    @Column
-    private boolean tokenization = false;
-
-    @Column
-    private boolean cvvSecurity = false;
-
-    @Column
-    private boolean makerCheckerMode = false;
-
-    @Column
-    private boolean masking = false;
+    private boolean allowExcess = false;
 
     @OneToMany(mappedBy = "unitOptions")
     @ToString.Exclude
-    private List<Merchant> merchantList;
+    private List<Device> deviceList;
 
 }

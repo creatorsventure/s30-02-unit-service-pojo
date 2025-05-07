@@ -3,7 +3,7 @@ package com.cv.s3002unitservicepojo.entity;
 import com.cv.s10coreservice.entity.generic.GenericUnitEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -31,7 +31,7 @@ public class UnitKey extends GenericUnitEntity {
     @Column(nullable = false, columnDefinition = "TEXT")
     String publicKey;
 
-    @ManyToMany(mappedBy = "unitKeyList")
+    @OneToMany(mappedBy = "unitKey")
     @ToString.Exclude
     private List<Device> deviceList;
 

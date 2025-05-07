@@ -22,25 +22,29 @@ public class DeviceDto extends GenericDto {
     @Serial
     private static final long serialVersionUID = 5834379111334314995L;
 
-    @NotBlank(message = "{app.message.failure.blank}")
-    @NotNull(message = "{app.message.failure.blank}")
-    private String schemeId;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
-    String currencyId;
+    private String selectedMerchantId;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
-    private String merchantId;
+    private String selectedUnitOptionsId;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    private String selectedUnitKeyId;
+
+    @NotEmpty(message = "{app.message.failure.empty}")
+    private List<String> currencyList;
+
+    @NotEmpty(message = "{app.message.failure.empty}")
+    private List<String> schemeList;
 
     @NotEmpty(message = "{app.message.failure.empty}")
     private List<String> actionList;
 
     @NotEmpty(message = "{app.message.failure.empty}")
     private List<String> engineList;
-
-    @NotEmpty(message = "{app.message.failure.empty}")
-    private List<String> SelectedUnitKeyIds;
 
 }

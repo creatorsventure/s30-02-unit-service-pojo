@@ -18,11 +18,6 @@ public class UnitOptionsDto extends GenericDto {
     @Serial
     private static final long serialVersionUID = 4199576836010621376L;
 
-    private boolean captcha = false;
-    private boolean transactionOTP = false;
-    private boolean loginOTP = false;
-    private boolean tokenization = false;
-    private boolean cvvSecurity = false;
-    private boolean makerCheckerMode = false;
-    private boolean masking = false;
+    private boolean partial;
+    private boolean allowExcess;
 }

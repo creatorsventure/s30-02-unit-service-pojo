@@ -20,16 +20,38 @@ public class Device extends GenericUnitEntity {
     @Serial
     private static final long serialVersionUID = 4074762267809674292L;
 
-    @Column(nullable = false)
-    private String schemeId;
-
-    @Column(nullable = false)
-    String currencyId;
-
     @ManyToOne
     @JoinColumn(name = "merchant_id", referencedColumnName = "id", nullable = false)
     @ToString.Exclude
     private Merchant merchant;
+
+    @ManyToOne
+    @JoinColumn(name = "unit_option_id", referencedColumnName = "id", nullable = false)
+    @ToString.Exclude
+    private UnitOptions unitOptions;
+
+    @ManyToOne
+    @JoinColumn(name = "unit_key_id", referencedColumnName = "id", nullable = false)
+    @ToString.Exclude
+    private UnitKey unitKey;
+
+    @ElementCollection
+    @CollectionTable(
+            name = "device_currency_mapping",
+            joinColumns = @JoinColumn(name = "device_id")
+    )
+    @Column(name = "currency_id")
+    @ToString.Exclude
+    private List<String> currencyList;
+
+    @ElementCollection
+    @CollectionTable(
+            name = "device_scheme_mapping",
+            joinColumns = @JoinColumn(name = "device_id")
+    )
+    @Column(name = "scheme_id")
+    @ToString.Exclude
+    private List<String> schemeList;
 
     @ElementCollection
     @CollectionTable(
@@ -48,13 +70,5 @@ public class Device extends GenericUnitEntity {
     @Column(name = "engine_id")
     @ToString.Exclude
     private List<String> engineList;
-
-    @ManyToMany
-    @JoinTable(name = "unitkey_device_mapping",
-            joinColumns = @JoinColumn(name = "device_id", referencedColumnName = "id", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "unitkey_id", referencedColumnName = "id", nullable = false)
-    )
-    @ToString.Exclude
-    private List<UnitKey> unitKeyList;
 
 }
