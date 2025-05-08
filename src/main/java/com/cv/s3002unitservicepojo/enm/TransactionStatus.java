@@ -7,12 +7,12 @@ import lombok.Getter;
 @Getter
 public enum TransactionStatus {
     INITIALIZED(0),
-    LINK_SENT(2),
-    PAGE_LOADED(3),
-    TRANSACTION_PUSHED(4),
-    TRANSACTION_COMPLETED(5),
-    RECON_COMPLETED(6),
-    SETTLEMENT_COMPLETED(7);
+    LINK_SENT(1),
+    PAGE_LOADED(2),
+    TRANSACTION_PUSHED(3),
+    TRANSACTION_COMPLETED(4),
+    RECON_COMPLETED(5),
+    SETTLEMENT_COMPLETED(6);
 
     private final int code;
 

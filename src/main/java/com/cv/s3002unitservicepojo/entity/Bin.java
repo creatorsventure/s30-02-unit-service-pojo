@@ -1,6 +1,8 @@
 package com.cv.s3002unitservicepojo.entity;
 
 import com.cv.s10coreservice.entity.generic.GenericUnitEntity;
+import com.cv.s3002unitservicepojo.enm.BinType;
+import com.cv.s3002unitservicepojo.enm.InstrumentType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.*;
@@ -25,10 +27,10 @@ public class Bin extends GenericUnitEntity {
     String schemeId;
 
     @Column(nullable = false)
-    String type;
+    BinType type;
 
     @Column(nullable = false)
-    String instrumentType;
+    InstrumentType instrumentType;
 
     @Column(nullable = false)
     Long start;

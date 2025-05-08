@@ -11,5 +11,6 @@ public class UnitConstant {
     public final static String APP_NAVIGATION_API_UNIT_OPTIONS_RESOLVE_ORG_OPTIONS = "/resolve-org-options";
     public final static String APP_NAVIGATION_API_UNIT_KEY = "/unit-key";
     public final static String APP_NAVIGATION_API_RESOLVE_ORG_UNIT_ID_NAME_MAPS = "/resolve-org-unit-id-name-maps";
+    public final static String APP_NAVIGATION_API_RESOLVE_ORG_UNIT_SCHEME = "/resolve-org-unit-scheme";
 
 }
